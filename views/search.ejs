@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8"/>
+    <title>Ticketac</title>
+    <%- include('./tools/headLinks'); %>
+  </head>
+  <body>
+    <%- include('./tools/header'); %>
+
+    <div class="container">
+      <% if(resultSearch.length == 0){%>
+        <div class="row justify-content-center">
+          <div class="col-11 col-lg-7 text-center">
+            <h2>Oops! No trains available...</h2>
+            <a href="/" id="btn-home1" type="submit" class="inline btn btn-danger">Home</a>
+          </div>
+        </div>
+      <%} else {%>
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-7">
+          <h2>Tickets available on <%=dateFormat%> :</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-8">
+          <ul class="list-group">
+            <% for (var i=0; i<resultSearch.length; i++) { %>
+            <li class="search-result list-group-item d-flex justify-content-between align-items-center rounded">
+              <h5><%= resultSearch[i].departure %> / <%= resultSearch[i].arrival %></h5>
+              <p class="no-margin">train depature at <%= resultSearch[i].departureTime %></p>
+              <div class="no-margin">
+                  <h3 class="inline"><%= resultSearch[i].price %>€</h3>
+                  <a href="/order?journeyId=<%=resultSearch[i]._id%>" id="btn-ticket" type="button" class="inline btn btn-danger">OK</a>
+              </div>
+            </li>
+            <% } 
+            } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+    <%- include('./tools/endBodyLinks'); %>
+  </body>
+</html>

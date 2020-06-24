@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8"/>
+    <title>Ticketac</title>
+    <%- include('./tools/headLinks'); %>
+  </head>
+  <body>
+
+    <%- include('./tools/header'); %> 
+
+    <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-11 col-lg-7">
+            <h2>One-way ticket :</h2>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <form action="/search" method="POST">
+            <div class="form-row">
+              <div class="col">
+                <input name="departure" type="text" class="form-control" placeholder="From: Paris, Marseille...">
+              </div>
+              <div class="col">
+                <input name="arrival" type="text" class="form-control" placeholder="To: Lille, Nantes...">
+              </div>
+              <div class="col" id="datepicker-box">
+                <input name="date" type="text" class="form-control" id="datepicker">
+              </div>
+              <input id="btn-datepicker" type="button" class="btn btn-danger" value="Go">
+              <button id="btn-search" type="submit" class="btn btn-danger">Go</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="background-image row justify-content-center align-items-center">
+        <img src="images/landmark.png" alt="Famous towers" height="250" width="250">
+      </div>
+    </div>
+    <%- include('./tools/endBodyLinks'); %>
+  </body>
+</html>

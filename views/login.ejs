@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset = "UTF-8"/>
+          <title> Ticketac Login </title>
+          <%- include('./tools/headLinks'); %>
+     </head>
+
+    <body>
+        <%- include('./tools/header'); %> 
+          <div class = "container d-flex h-75 justify-content-center align-items-center">
+               <div class= "row">
+                    <div class= "col-12 text-center d-flex justify-content-center">
+                         <div>
+                              <h1 class="text-light">Sign-in :</h1>
+                              <form action="/signIn" Method="POST"class="mx-4">
+                                   <div class="form-group">
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">  
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                   </div>
+                                   <button type="submit" class="btn btn-danger">Confirm</button>
+                              </form>
+                         </div>
+                         <div>
+                              <h1 class="text-light">Sign-up :</h1>
+                              <form action="/signUp" method="POST" class = "mx-4">
+                                   <div class="form-group">
+                                        <input type="text" name="name" class="form-control" id="exampleName" aria-describedby="nameHelp" placeholder="Name" value="">
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="text" name="firstName" class="form-control" id="exampleFirstName" aria-describedby="FirstNameHelp" value="" placeholder="FirstName">
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="">
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="">
+                                   </div>
+                                   <button type="submit" class="btn btn-danger">Confirm</button>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+          </div>   
+        <%- include('./tools/endBodyLinks'); %>
+    </body>
+</html>

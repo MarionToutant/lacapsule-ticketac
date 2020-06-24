@@ -1,0 +1,75 @@
+html {
+
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+  background: linear-gradient(to bottom, #cde7f4 0%,#3072a5 100%);
+}
+
+a {
+  color: #00B7FF;
+}
+
+h2 {
+  margin-bottom: 17px;
+  color: white;
+}
+
+h5 {
+  margin:0px;
+}
+
+h6 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.background-image {
+  margin-top: 80px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.ui-datepicker-header { 
+  background: rgb(240, 240, 240);
+  border-color: lightgrey;
+  color: black;
+}
+
+.ui-datepicker { 
+  background: white;
+}
+
+#btn-search, #btn-datepicker, #btn-ticket {
+  margin-left: 20px;
+}
+
+#btn-ticket, #btn-confirm, #btn-home2 {
+  margin-right: 15px;
+}
+
+.search-result {
+  margin: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.no-margin {
+  margin: 0px;
+  padding: 0px;
+}
+
+.inline {
+  display: inline-block;
+}

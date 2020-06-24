@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8"/>
+    <title>Ticketac</title>
+    <%- include('./tools/headLinks'); %>
+  </head>
+  <body>
+    <%- include('./tools/header'); %>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-6">
+          <h2>My last trips :</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-10">
+          <table class="table table-borderless table-light table-hover">
+            <thead>
+              <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Journey</th>
+                <th scope="col">Date</th>
+                <th scope="col">Departure time</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i=0; i<orders.length; i++) { %>
+              <tr>
+                <th scope="row"><%=i+1%></th>
+                <td><%=orders[i].journey.departure%> / <%=orders[i].journey.arrival%></td>
+                <td><%=dateFormat(orders[i].journey.date)%></td>
+                <td><%=orders[i].journey.departureTime%></td>
+                <td><%=orders[i].journey.price%>€</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-10 text-right">
+          <a href="/" id="btn-home2" type="submit" class="inline btn btn-danger">Home</a>
+        </div>
+      </div>
+    </div>
+    <%- include('./tools/endBodyLinks'); %>
+  </body>
+</html>

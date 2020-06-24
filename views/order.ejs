@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8"/>
+    <title>Ticketac</title>
+    <%- include('./tools/headLinks'); %>
+  </head>
+  <body>
+    <%- include('./tools/header'); %>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-6">
+          <h2>My tickets :</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-10">
+          <table class="table table-borderless table-light table-hover">
+            <thead>
+              <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Journey</th>
+                <th scope="col">Date</th>
+                <th scope="col">Departure time</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var totalOrder = 0;
+                for(var i=0; i < orders.length; i++) { %>
+              <tr>
+                <th scope="row"><%= i + 1 %></th>
+                <td><%=orders[i].journey.departure%> / <%=orders[i].journey.arrival%></td>
+                <td><%=dateFormat(orders[i].journey.date)%></td>
+                <td><%=orders[i].journey.departureTime%></td>
+                <td><%=orders[i].journey.price%>€</td>
+              </tr>
+              <% 
+              totalOrder += orders[i].journey.price
+              }%>
+              <tr class="table-danger">
+                <th scope="row">Total</th>
+                <td colspan="3"></td>
+                <td><%=totalOrder%>€</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-11 col-lg-10 text-right">
+          <a href="#" id="btn-confirm" type="submit" class="inline btn btn-danger">Confirm</a>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-4 justify-content-center">
+          <div id="toast-confirm" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+            <div class="toast-header">
+              <strong class="mr-auto">Confirmation</strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body text-center">
+              <h6>Do you validate your order?</h6>
+              <a href="/mytrips?confirmed=true" id="btn-confirm2" type="submit" class="inline btn btn-danger">Yes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <%- include('./tools/endBodyLinks'); %>
+  </body>
+</html>
